@@ -75,7 +75,7 @@
       ],
       "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Send a text message",
-      "webhookId": "8f7b097c-6e4e-40b3-ac39-8c793101b1aa",
+      "webhookId": "REPLACE_WITH_YOUR_WEBLOOK_ID",
       "credentials": {
         "telegramApi": {
           "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
