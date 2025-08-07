@@ -1,0 +1,325 @@
+{
+  "name": "parent child workfloe",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        704,
+        48
+      ],
+      "id": "63bb8efb-74a9-4326-9c10-e2837137e5bd",
+      "name": "Telegram Trigger",
+      "webhookId": "3b69259b-1c99-4d76-9e0f-7fff0c5f3d66",
+      "credentials": {
+        "telegramApi": {
+          "id": "Fe46RqEqdS3TIiro",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are the ultimate personal assistant. Your job is to send the user's query to the correct tool. You should never be writing emails, or creating event summaries, you just need to call the correct tool.\n\n## Tools\nemailAgent: Use this tool to take action in email\n\ncalendarAgent: Use this tool to take action in calendar\n\ncontactAgent: Use this tool to get, update, or add contacts\n\ncontentCreator: Use this tool to create blog posts\n\nTavily: Use this tool to search the web\n\n## Rules\nSome actions require you to look up contact information first. For the following actions, you must get contact information and send that to the agent who needs it:\n\nsending emails\n\ndrafting emails\n\ncreating calendar event with attendee\n\n## Examples\n1)\n\nInput: send an email to nate herkelman asking him what time he wants to leave\n\nAction: Use contactAgent to get nate herkelman's email\n\nAction: Use emailAgent to send the email. You will pass the tool a query like\n\"send nate herkelman an email to ask what time he wants to leave. here is his email: [email address]\"\n\nOutput: The email has been sent to Nate Herkelman. Anything else I can help you with?\n\n🕓 Final Reminders\nHere is the current date/time: {{ $now }}\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        1072,
+        16
+      ],
+      "id": "845253ae-1c37-47d6-9dca-2abe2efc2385",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.text }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        656,
+        352
+      ],
+      "id": "2a96d07c-0271-43e5-8f12-f1a5c5ff9b5d",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "s4YmCzvgVLa7mtrk",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1856,
+        32
+      ],
+      "id": "a88652bd-addf-4318-98ab-3052f82b4fee",
+      "name": "Send a text message",
+      "webhookId": "8f7b097c-6e4e-40b3-ac39-8c793101b1aa",
+      "credentials": {
+        "telegramApi": {
+          "id": "Fe46RqEqdS3TIiro",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        816,
+        368
+      ],
+      "id": "eaed083b-d7d4-498c-8110-a03562026503",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "eYGoNy62DXz8sJvp",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "query": "={{ $('Telegram Trigger').item.json.message.text }}",
+        "options": {}
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavilyTool",
+      "typeVersion": 1,
+      "position": [
+        1552,
+        176
+      ],
+      "id": "8570d2f5-75c1-45c5-9331-dbdde4806e3e",
+      "name": "Search in Tavily",
+      "credentials": {
+        "tavilyApi": {
+          "id": "1YrL7wLQWIVbPdof",
+          "name": "Tavily account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        240
+      ],
+      "id": "fe18a782-70a8-4ead-bab5-ab72bd398ba7",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "content": "## Parent agent :\n",
+        "height": 400,
+        "width": 592,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1024,
+        -80
+      ],
+      "typeVersion": 1,
+      "id": "6ee8130a-731a-4a18-b794-d8c59941ba25",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Child Agent\n",
+        "height": 224,
+        "width": 656,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1040,
+        464
+      ],
+      "typeVersion": 1,
+      "id": "42174163-8ac4-48ef-ba60-d26bddae2fa7",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "description": "call this agent to send email actions...",
+        "workflowId": {
+          "__rl": true,
+          "value": "KjCzcET1tEjTD9n8",
+          "mode": "list",
+          "cachedResultName": "sub emal"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1104,
+        640
+      ],
+      "id": "b46c852e-beb6-48de-86e6-f43da17b48d2",
+      "name": "Email agent"
+    },
+    {
+      "parameters": {
+        "description": "call this tool to help in order to image generation..",
+        "workflowId": {
+          "__rl": true,
+          "value": "JHkZlg10Ex7Sdh7N",
+          "mode": "list",
+          "cachedResultName": "image generator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1392,
+        544
+      ],
+      "id": "f202be69-5f72-44ee-8afe-b6b74b9eaf46",
+      "name": "image generation"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search in Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "image generation": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e255a9f9-648a-435b-9821-899d9f09d33d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7c32b349e7002bbdabdffebcfc6f7d455dcba035093f5804baf9d8fc6efc5333"
+  },
+  "id": "C6n01GbPIlOwYv8T",
+  "tags": []
+}
