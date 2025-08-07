@@ -1,5 +1,6 @@
 # Telegram_bot
-This project integrates a powerful AI agent directly into Telegram, enabling you to streamline daily tasks without leaving your chat window.Here’s a **complete and well-structured `README.md`** for your **Telegram Bot using n8n** that connects an AI agent (e.g., for email sending, content ideas, calendar actions, and more):
+This project integrates a powerful AI agent directly into Telegram, enabling you to streamline daily tasks without leaving your chat window.Here’s a **complete and well-structured `README.md`** for your 
+Telegram Bot using n8n** that connects an AI agent (e.g., for email sending, content ideas, calendar actions, and more):
 
 ---
 
