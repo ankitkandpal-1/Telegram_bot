@@ -14,7 +14,7 @@
         704,
         48
       ],
-      "id": "63bb8efb-74a9-4326-9c10-e2837137e5bd",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Telegram Trigger",
       "webhookId": "REPLACE_WITH_YOUR_WEBHOOK_ID",
       "credentials": {
@@ -52,7 +52,7 @@
         656,
         352
       ],
-      "id": "2a96d07c-0271-43e5-8f12-f1a5c5ff9b5d",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Postgres Chat Memory",
       "credentials": {
         "postgres": {
@@ -78,7 +78,7 @@
       "webhookId": "8f7b097c-6e4e-40b3-ac39-8c793101b1aa",
       "credentials": {
         "telegramApi": {
-          "id": "Fe46RqEqdS3TIiro",
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
           "name": "Telegram account"
         }
       }
