@@ -72,6 +72,9 @@ Install n8n locally or deploy it using:
    * Email (SMTP / SendGrid)
 4. Customize node values (like email addresses, messages)
 
+![AI Telegram Bot Screenshot](https://github.com/ankitkandpal-1/Telegram_bot/blob/main/Screenshot%202025-08-07%20221654.png?raw=true)
+
+
 ### 5. Run the Workflow
 
 * Activate the Telegram trigger
