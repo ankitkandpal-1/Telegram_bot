@@ -34,9 +34,9 @@ This project integrates a smart, AI-powered assistant directly into **Telegram**
 
 ---
 
-## 📦 Folder Structure (if applicable)
 
-![image alt](https://github.com/ankitkandpal-1/Telegram_bot/blob/0889bed57f8154d7db54aed7d77988f44f093750/Screenshot%202025-08-07%20221654.png)
+![AI Telegram Bot Screenshot](https://github.com/ankitkandpal-1/Telegram_bot/blob/main/Screenshot%202025-08-07%20221654.png?raw=true)
+
 
 ## ⚙️ Setup Guide
 
