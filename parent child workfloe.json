@@ -117,7 +117,7 @@
       "name": "Search in Tavily",
       "credentials": {
         "tavilyApi": {
-          "id": "1YrL7wLQWIVbPdof",
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
           "name": "Tavily account"
         }
       }
