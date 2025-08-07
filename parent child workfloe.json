@@ -19,7 +19,7 @@
       "webhookId": "3b69259b-1c99-4d76-9e0f-7fff0c5f3d66",
       "credentials": {
         "telegramApi": {
-          "id": "Fe46RqEqdS3TIiro",
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
           "name": "Telegram account"
         }
       }
@@ -38,7 +38,7 @@
         1072,
         16
       ],
-      "id": "845253ae-1c37-47d6-9dca-2abe2efc2385",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "AI Agent"
     },
     {
@@ -56,7 +56,7 @@
       "name": "Postgres Chat Memory",
       "credentials": {
         "postgres": {
-          "id": "s4YmCzvgVLa7mtrk",
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
           "name": "Postgres account"
         }
       }
@@ -73,7 +73,7 @@
         1856,
         32
       ],
-      "id": "a88652bd-addf-4318-98ab-3052f82b4fee",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Send a text message",
       "webhookId": "8f7b097c-6e4e-40b3-ac39-8c793101b1aa",
       "credentials": {
@@ -93,11 +93,11 @@
         816,
         368
       ],
-      "id": "eaed083b-d7d4-498c-8110-a03562026503",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Google Gemini Chat Model",
       "credentials": {
         "googlePalmApi": {
-          "id": "eYGoNy62DXz8sJvp",
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
           "name": "Google Gemini(PaLM) Api account"
         }
       }
@@ -113,7 +113,7 @@
         1552,
         176
       ],
-      "id": "8570d2f5-75c1-45c5-9331-dbdde4806e3e",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Search in Tavily",
       "credentials": {
         "tavilyApi": {
@@ -130,7 +130,7 @@
         1440,
         240
       ],
-      "id": "fe18a782-70a8-4ead-bab5-ab72bd398ba7",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Calculator"
     },
     {
@@ -146,7 +146,7 @@
         -80
       ],
       "typeVersion": 1,
-      "id": "6ee8130a-731a-4a18-b794-d8c59941ba25",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Sticky Note"
     },
     {
@@ -162,7 +162,7 @@
         464
       ],
       "typeVersion": 1,
-      "id": "42174163-8ac4-48ef-ba60-d26bddae2fa7",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Sticky Note1"
     },
     {
@@ -189,7 +189,7 @@
         1104,
         640
       ],
-      "id": "b46c852e-beb6-48de-86e6-f43da17b48d2",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "Email agent"
     },
     {
@@ -216,7 +216,7 @@
         1392,
         544
       ],
-      "id": "f202be69-5f72-44ee-8afe-b6b74b9eaf46",
+      "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
       "name": "image generation"
     }
   ],
@@ -320,6 +320,6 @@
     "templateCredsSetupCompleted": true,
     "instanceId": "7c32b349e7002bbdabdffebcfc6f7d455dcba035093f5804baf9d8fc6efc5333"
   },
-  "id": "C6n01GbPIlOwYv8T",
+  "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
   "tags": []
 }
