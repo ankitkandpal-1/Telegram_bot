@@ -16,7 +16,7 @@
       ],
       "id": "63bb8efb-74a9-4326-9c10-e2837137e5bd",
       "name": "Telegram Trigger",
-      "webhookId": "3b69259b-1c99-4d76-9e0f-7fff0c5f3d66",
+      "webhookId": "REPLACE_WITH_YOUR_WEBHOOK_ID",
       "credentials": {
         "telegramApi": {
           "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
