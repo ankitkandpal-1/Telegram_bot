@@ -36,20 +36,7 @@ This project integrates a smart, AI-powered assistant directly into **Telegram**
 
 ## 📦 Folder Structure (if applicable)
 
-```
-
-.
-├── workflows/
-│   ├── telegram-ai-agent.json
-│   └── email-agent-subflow\.json
-├── assets/
-│   └── screenshots.png
-├── README.md
-└── .env (if using API keys manually)
-
-````
-
----
+https://github.com/ankitkandpal-1/Telegram_bot/blob/0889bed57f8154d7db54aed7d77988f44f093750/Screenshot%202025-08-07%20221654.png
 
 ## ⚙️ Setup Guide
 
